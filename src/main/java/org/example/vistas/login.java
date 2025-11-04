@@ -72,7 +72,7 @@ public class login extends JPanel {
         if(usuario.getRole().equals("Admin")){
             navigation.mostrarVista("admin");
         }else if(usuario.getRole().equals("User")){
-            navigation.mostrarVista("user");
+            navigation.mostrarVista("usuario");
         }
     }
 

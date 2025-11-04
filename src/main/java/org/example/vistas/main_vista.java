@@ -24,10 +24,12 @@ public class main_vista extends JFrame implements NavigationController {
         // Crear vistas (pasamos 'this' para que puedan cambiar de vista)
         login loginView = new login(this, context);
         register registerView = new register(this, context);
+        usuario usuarioView = new usuario(this, context);
 
         // Agregar al CardLayout
         mainPanel.add(loginView.getMainPanel(), "login");
         mainPanel.add(registerView.getMainPanel(), "register");
+        mainPanel.add(usuarioView.getMainPanel(), "usuario");
 
         // Mostrar primera vista
         mostrarVista("login");

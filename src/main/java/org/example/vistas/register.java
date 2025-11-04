@@ -40,6 +40,12 @@ public class register extends JFrame {
                 navigation.mostrarVista("login");
             }
         });
+        LoginEnviar_button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                navigation.mostrarVista("usuario");
+            }
+        });
     }
 
     private void guardarUsuarioDb() {
