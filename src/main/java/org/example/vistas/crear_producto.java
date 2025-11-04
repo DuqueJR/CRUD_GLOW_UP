@@ -38,6 +38,12 @@ public class crear_producto extends JPanel{
         setVisible(true);
 
 
+        CrearCategoriaAgregarCategoria_Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                navigation.mostrarVista("categoria");
+            }
+        });
     }
 
     private void guardarProductoDb() {
@@ -60,5 +66,9 @@ public class crear_producto extends JPanel{
         Producto producto = new Producto(id++, nombre, descripcion, Integer.parseInt(unidadesStock), LocalDate.parse(fechaLanzamiento), Integer.parseInt(precioUnitario), categoria1);
 
 
+    }
+
+    public JPanel getMainPanel(){
+        return panel_main;
     }
 }

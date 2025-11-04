@@ -31,11 +31,10 @@ public class crear_categoria extends JPanel {
         setSize(400, 300);
         setVisible(true);
 
-        agregarCategoriaButton.addActionListener(new ActionListener() {
+        agregarProductoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                guardarCategoriaDb();
-                navigation.mostrarVista("admin");
+                navigation.mostrarVista("agregar_producto");
             }
         });
     }
