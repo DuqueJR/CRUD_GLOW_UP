@@ -3,10 +3,8 @@ package org.example.vistas;
 import javax.swing.*;
 
 public class producto {
-    private JPanel LoginFormulario;
-    private JTextField LoginUsuarioTextField;
-    private JPasswordField LoginContrasenaPasswordField;
-    private JButton enviarButton;
-    private JButton LoginCambiarRegister;
-    private JPanel Login;
+    private JPanel ProductoPanel;
+    private JLabel ProductoPanel_nombre;
+    private JLabel ProductoPanel_descripcion;
+    private JButton productoPanel_agregarButton;
 }
