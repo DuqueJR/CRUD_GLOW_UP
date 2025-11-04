@@ -8,9 +8,8 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
-import java.time.LocalTime;
 
-public class register extends JFrame {
+public class register extends JPanel {
     private JTextField RegisterEmail_textField;
     private JTextField RegisterNombre_textField;
     private JPasswordField RegisterContraseña_passwordField;
@@ -27,13 +26,9 @@ public class register extends JFrame {
         this.usuario_services = context.getBean(Usuario_services.class);
         this.navigation = navigation;
 
-        setContentPane(panel_main);
         setSize(400, 300);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
 
-        LoginEnviar_button.addActionListener(e -> guardarUsuarioDb());
         Register_login_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -43,6 +38,7 @@ public class register extends JFrame {
         LoginEnviar_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                guardarUsuarioDb();
                 navigation.mostrarVista("usuario");
             }
         });
