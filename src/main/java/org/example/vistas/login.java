@@ -29,8 +29,9 @@ public class login extends JPanel {
         String contraseña = new String(LoginContraseña_passwordField.getPassword());
 
         LoginIngresar_Button.addActionListener(e -> {
-            validarLogin(buscarUsuario(nombre, contraseña), nombre, contraseña);
-            validarRole(buscarUsuario(nombre, contraseña));
+            //validarLogin(buscarUsuario(nombre, contraseña), nombre, contraseña);
+            //validarRole(buscarUsuario(nombre, contraseña));
+            navigation.mostrarVista("categoria");
         });
         Login_register_button.addActionListener(new ActionListener() {
             @Override

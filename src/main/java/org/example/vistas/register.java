@@ -53,7 +53,7 @@ public class register extends JPanel {
             JOptionPane.showMessageDialog(this, "Por favor, completa todos los campos.", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
-        Usuario usuario = new Usuario(id++, nombre, email, contrasena, "USER", LocalDate.now(), "ACTIVA");
+        Usuario usuario = new Usuario(id++, nombre, email, contrasena, "User", LocalDate.now(), "ACTIVA");
 
         usuario_services.save_usuario(usuario);
     }

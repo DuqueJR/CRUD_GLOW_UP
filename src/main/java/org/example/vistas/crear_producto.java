@@ -3,6 +3,7 @@ package org.example.vistas;
 import org.example.Model.Categoria;
 import org.example.Model.Producto;
 import org.example.Services.Categoria_services;
+import org.example.Services.Producto_services;
 import org.springframework.context.ApplicationContext;
 
 import javax.swing.*;
@@ -27,12 +28,14 @@ public class crear_producto extends JPanel{
 
     private final NavigationController navigation;
     private final Categoria_services categoria_services;
+    private final Producto_services producto_services;
 
     private int id = 0;
 
     public crear_producto(NavigationController navigation, ApplicationContext context) {
         this.navigation = navigation;
         this.categoria_services = context.getBean(Categoria_services.class);
+        this.producto_services = context.getBean(Producto_services.class);
 
         setSize(400, 300);
         setVisible(true);
@@ -42,6 +45,12 @@ public class crear_producto extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
                 navigation.mostrarVista("categoria");
+            }
+        });
+        CrearProductoaAgregar_button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                guardarProductoDb();
             }
         });
     }
@@ -65,6 +74,7 @@ public class crear_producto extends JPanel{
 
         Producto producto = new Producto(id++, nombre, descripcion, Integer.parseInt(unidadesStock), LocalDate.parse(fechaLanzamiento), Integer.parseInt(precioUnitario), categoria1);
 
+        producto_services.save_producto(producto);
 
     }
 

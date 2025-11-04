@@ -34,7 +34,15 @@ public class crear_categoria extends JPanel {
         agregarProductoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                navigation.mostrarVista("agregar_producto");
+                navigation.mostrarVista("agregarProducto");
+            }
+        });
+
+
+        agregarCategoriaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                guardarCategoriaDb();
             }
         });
     }
